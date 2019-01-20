@@ -1,6 +1,4 @@
-PAD_token = 0
-SOS_token = 1
-EOS_token = 2
+from util import PAD_token, SOS_token, EOS_token
 
 class Voc:
     def __init__(self, name):

@@ -1,4 +1,6 @@
-from util import PAD_token, SOS_token, EOS_token
+PAD_token = 0
+SOS_token = 1
+EOS_token = 2
 
 class Voc:
     def __init__(self, name):
@@ -34,7 +36,7 @@ class Voc:
             if v >= min_count:
                 keep_words.append(k)
 
-        print('keep_words {}/{} = {:.4f}'.format(len(keep_words), len(word2index), len(keep_words)/len(word2index)))
+        print('keep_words {}/{} = {:.4f}'.format(len(keep_words), len(self.word2index), len(keep_words)/len(self.word2index)))
 
         # Reinitialize dictionaries
         self.word2index = {}

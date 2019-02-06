@@ -26,9 +26,6 @@ device = torch.device("cuda" if USE_CUDA else "cpu")
 
 MAX_LENGTH=10 # Maximum sentence length to consider
 MIN_COUNT = 3 # Minimum word count threshold for trimming
-PAD_token = 0
-SOS_token = 1
-EOS_token = 2
 
 corpus_name = "cornell_movie_dialogs_corpus"
 corpus = os.path.join("../data", corpus_name)
@@ -147,7 +144,7 @@ def filterPair(p):
 
 # Filter pairs using filterPair condition
 def filterPairs(pairs):
-    return [pair in pairs if filterPair(pair)]
+    return [pair for pair in pairs if filterPair(pair)]
 
 # Using the functions defined above, return a populated voc object and pairs list
 def loadPrepareData(corpus, corpus_name, datafile, save_dir):
